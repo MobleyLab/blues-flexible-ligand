@@ -1,0 +1,3 @@
+parm ../complex_wat.prmtop
+trajin r3i.nc 
+dihedral j1 :299@C4 :299@C3 :299@C6 :299@C17 out torsion.txt 
