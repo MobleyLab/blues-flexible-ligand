@@ -1,0 +1,26 @@
+# load the AMBER force fields
+source leaprc.protein.ff14SB
+source leaprc.gaff
+source leaprc.water.tip3p
+
+# load force field parameters for REF and TRA
+loadamberparams LIG.frcmod
+loadoff LIG.lib
+HOH=WAT
+
+# load the coordinates and create the complex
+ligand = loadmol2 LIG.mol2
+protein = loadpdb 2r3i_protein_crystalwat.pdb
+complex = combine {protein ligand}
+check complex
+
+savepdb complex complex_nowat.pdb
+
+# create complex in solution for vdw+bonded transformation
+solvatebox complex TIP3PBOX 10
+addions complex Cl- 0
+addions complex Na+ 0
+savepdb complex complex_wat.pdb
+saveamberparm complex complex_wat.prmtop complex_wat.inpcrd
+
+quit
