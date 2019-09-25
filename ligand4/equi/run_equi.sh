@@ -1,3 +1,5 @@
+# Usage: bash run_equi.sh
+
 module load cuda/8.0.44
 
 # runnning antechamber to get AM1-BCC partial charges for the ligand

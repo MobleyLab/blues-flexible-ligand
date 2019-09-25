@@ -26,7 +26,7 @@ import logging
 def runNCMC(platform_name, nstepsNC, nprop, outfname):
 
     #Generate the ParmEd Structure
-    prmtop = '../complex_wat.prmtop'#
+    prmtop = '../complex_wat.prmtop'
     inpcrd = '../ligand4.equi.rst'
     struct = parmed.load_file(prmtop, xyz=inpcrd)
     print('Structure: %s' % struct.topology)
@@ -39,7 +39,7 @@ def runNCMC(platform_name, nstepsNC, nprop, outfname):
             'nonbondedMethod' : 'PME', 'nonbondedCutoff': 10,
             'constraints': 'HBonds', 'freeze_distance' : 5.0,
             'trajectory_interval' : 1000, 'reporter_interval' : 1000,
-            'ncmc_traj' : False, 'write_move' : True,
+            'ncmc_traj' : False, 'write_move' : False,
             'platform' : platform_name,
             'outfname' : 'r3i', 'NPT' : False,
             'verbose' : False}
@@ -50,7 +50,6 @@ def runNCMC(platform_name, nstepsNC, nprop, outfname):
     # Calculate particle masses of object to be moved
     resname = "LIG"
     dihedral_atoms = ["C4", "C3", "C6", "C17" ]
-    #alch_list = ['C9', 'H92', 'H93', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'H1', 'H2', 'H4', 'H5', 'H6']
     alch_list = ['C3', 'C6', 'C13','C14', 'C15', 'C16', 'C17', 'H9','H10','H11','H12','F' ]
 
     #  

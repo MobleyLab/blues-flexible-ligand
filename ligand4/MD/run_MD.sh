@@ -1,3 +1,5 @@
+# Usage: bash run_MD.sh
+
 module load cuda/8.0.44
 
 mkdir rst PBS netcdf mdout mdinfo
