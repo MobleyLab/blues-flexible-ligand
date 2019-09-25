@@ -1,0 +1,19 @@
+source leaprc.gaff
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+
+loadamberparams LIG.frcmod
+loadoff LIG.lib
+
+2gmx = loadpdb 2gmx-lig1-nowat.pdb
+check 2gmx
+
+# creating simulation box with waters
+solvatebox 2gmx TIP3PBOX 10.0
+addions 2gmx Cl- 0
+addions 2gmx Na+ 0
+
+# saving files
+saveamberparm 2gmx complex_wat.prmtop complex_wat.inpcrd 
+savepdb 2gmx complex_wat.pdb
+quit
