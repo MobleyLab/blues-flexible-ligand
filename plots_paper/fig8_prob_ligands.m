@@ -7,7 +7,7 @@ hold off;
 x=0:10:100;
 y=ones(1,length(x))*0.5;
 
-for lig=1:2
+for lig=2:3
     subplot(1,3,lig); hold off;
     data = load(sprintf('../ligand%d/MD-NCMC-flip/torsion_lig%d_MDNCMC.txt', i,i));
     data(:,1) = data(:,1) * 0.001;
@@ -29,11 +29,11 @@ for lig=1:2
     set(gca, 'FontSize',14, 'YMinorTick', 'on', 'YMinorTick', 'on');
 
     %%%calculationg moves accepted and transition per million fev
-    if lig == 1
-        iter=load('../ligand1/MD-NCMC-flip/iter-accp.txt');
+    if lig == 2
+        iter=load('../ligand2/MD-NCMC-flip/iter-accp.txt');
         itrTotal = 5000;
-    elseif lig == 2
-        iter = load('../ligand2/MD-NCMC-flip/iter-accp.txt');
+    elseif lig == 3
+        iter = load('../ligand3/MD-NCMC-flip/iter-accp.txt');
         itrTotal = 25000;
     end
     
