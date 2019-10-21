@@ -7,11 +7,23 @@ do
   # create folder and input scripts for each NCMC protocl
   mkdir move-${noStep}NCMC
   cd move-${noStep}NCMC
-  sed "s/XYZ/$noStep/g" ../example.py > example.py
-  sed "s/XYZ/$noStep/g" ../blues.pbs > blues.pbs 
+
+     # preparing and running simulations for each parameter
+     sed "s/XYZ/$noStep/g" ../example.py > example.py
+     sed "s/XYZ/$noStep/g" ../blues.pbs > blues.pbs 
  
-  # run blues job
-  qsub blues.pbs
+     # run blues job
+     python3 blues.py > blues.log
+     
+     # post-processing blues MD trajectory for torsion distribution
+     cpptraj -i ../dihedral.ptraj
+     
+     # find accepted moves
+     python3 ../../../scripts/findAcceptedMove.py gmx.log
+     
+     # calculate number of moves accepted as a function of total number of iterations proposed
+     python3 ../../../scripts/findAcceptanceIteration.py gmx.log acc_ncmc_XYZNCMC.txt
+
   cd ..
 
 done 

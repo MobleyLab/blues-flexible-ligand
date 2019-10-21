@@ -8,7 +8,7 @@ itrTotal=5000; % total number of iterations
 for i = 1:length(NCMCstep)
     NCMCstep(i)
     % acceptance rate and error bar
-    data = load( sprintf('acc_ncmc_%dNCMC.txt', NCMCstep(i)) );
+    data = load( sprintf('../ligand1/NCMCstep_var/move-%dNCMC/acc_ncmc_%dNCMC.txt', NCMCstep(i), NCMCstep(i)) );
     [ meanData(i), errData(i) ] = error(data);
 end
 meanData = meanData*100 %converting to percentages 
