@@ -26,12 +26,12 @@ import logging
 def runNCMC(platform_name, nstepsNC, nprop, outfname):
 
     #Generate the ParmEd Structure
-    prmtop = '../complex_wat.prmtop'
-    inpcrd = '../ligand1.equi.rst'
+    prmtop = '../../complex_wat.prmtop'
+    inpcrd = '../../ligand1.equi.rst'
     struct = parmed.load_file(prmtop, xyz=inpcrd)
     print('Structure: %s' % struct.topology)
 
-    nstepsNC = 1000
+    nstepsNC = XYZ 
 
     #Define some options
     opt = { 'temperature' : 300.0, 'friction' : 1, 'dt' : 0.002,
@@ -72,6 +72,7 @@ def runNCMC(platform_name, nstepsNC, nprop, outfname):
     # Run BLUES Simulation
     blues = Simulation(simulations, ligand_mover, **opt)
     blues.run(opt['nIter'])
+
     # saving last restart
     restrt = RestartReporter('blues.rst', 1, struct.ptr('natom') );
     state = simulations.md.context.getState(getPositions=True, getEnergy=True, getVelocities=True, enforcePeriodicBox=True)

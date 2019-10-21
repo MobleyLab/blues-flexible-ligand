@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -N gmx-XYZ 
+#PBS -q home
+#PBS -l nodes=1:ppn=2:gpu
+#PBS -A mobley-ssasmal
+#PBS -o test.o
+#PBS -e test.o
+#PBS -l walltime=100:35:00
+
+
+cd ${PBS_O_WORKDIR}
+source activate openmm-7.1
+module load cuda/8.0.44
+python3 example.py > blues.log
+source deactivate openmm-7.1
