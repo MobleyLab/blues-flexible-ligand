@@ -1,11 +1,14 @@
 # blues-flexible-ligand
 contains files for blues-flexible-ligand paper
 
-
-# Input files for Stage 1a pose prediction subchallenge using HYBRID (OpenEye Scientific SOftware)
-
-This directory (and its subdirectories) provides the input files of the receptors (reference pdb structures used for docking), the pdb codes of the respective reference ligands and the mol2 files of the docked poses of the 20 ligands that we prepared using HYBRID and submitted for Stage 1a pose prediction subchallenge. Here, we also provide all the scripts that we used to parametrize the receptors and the ligands using amber and tleap, respectively. Moreover, the scripts used to perform MD simulations are available in this directory.
+This directory (and its subdirectories) provides the input files for running and analyzing the simulations reported in the paper "Sampling conformational changes of bound ligands using Nonequilibrium Candidate Monte Carlo".
 
 ## Contents
 
-- [`ligand1`](ligand1): directory containing the mol2 files of the 2 selected docked poses of the ligand BACE_1 and the scripts used to run MD and MM-GBSA calculations on the rescpective protein-ligand complexes.
+- [`ligand1`](ligand1): directory containing input files for running simulations with ligand 1.
+- [`ligand2`](ligand2): directory containing input files for running simulations with ligand 2.
+- [`ligand3`](ligand3): directory containing input files for running simulations with ligand 3.
+- [`ligand4`](ligand4): directory containing input files for running simulations with ligand 4.
+- [`plots_paper`](plots_paper): directory containing matlab scripts used to generate plots for the paper. The name of the scripts contain the figure number it was used for.
+- [`scripts`](scripts): directory containing scripts and Amber input files used to run and post-process MD and MD/NCMC simulations.
+- [`blues-master.tgz`](blues-master.tgz): BLUES code used for running MD/NCMC simulations.
