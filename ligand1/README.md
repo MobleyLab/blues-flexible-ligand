@@ -1,5 +1,5 @@
 # ligand 1
-This directory (and its subdirectories) provides the input files for running and analyzing simulations performed with ligand 1 reported in the paper "Sampling conformational changes of bound ligands using Nonequilibrium Candidate Monte Carlo".
+This directory (and its subdirectories) provides the input files for running and analyzing simulations performed with ligand 1.
 
 ## Contents
 
