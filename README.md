@@ -1,7 +1,7 @@
 # blues-flexible-ligand
 This directory (and its subdirectories) provides the input files for running and analyzing the simulations reported in the paper "Sampling conformational changes of bound ligands using Nonequilibrium Candidate Monte Carlo".
 
-<img align="right" src="ligands.png" width="300">
+<img align="right" src=".image/ligands.png" width="300">
 
 ## Contents
 
