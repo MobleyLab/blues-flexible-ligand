@@ -1,4 +1,4 @@
-# ligand 1
+# ligand 2
 This directory provides the input files for running and analyzing simulations performed with ligand **2**. Note: for plotting the figures reported in the paper, first the scripts in this directory need to be run, followed by running the matlab scripts in the folder [`plots_paper`](../plots_paper).
 
 ## Contents
