@@ -30,7 +30,7 @@ def runNCMC(platform_name, nstepsNC, nprop, outfname):
     struct = parmed.load_file(prmtop, xyz=inpcrd)
     print('Structure: %s' % struct.topology)
 
-    nstepsNC = 1000
+    nstepsNC = XYZ
 
     #Define some options
     opt = { 'temperature' : 300.0, 'friction' : 1, 'dt' : 0.002,

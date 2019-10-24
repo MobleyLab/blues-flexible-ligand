@@ -9,8 +9,7 @@ do
   cd move-${noStep}NCMC
 
      # preparing and running simulations for each parameter
-     sed "s/XYZ/$noStep/g" ../example.py > example.py
-     sed "s/XYZ/$noStep/g" ../blues.pbs > blues.pbs 
+     sed "s/XYZ/$noStep/g" ../blues.py > blues.py
  
      # run blues job
      python3 blues.py > blues.log

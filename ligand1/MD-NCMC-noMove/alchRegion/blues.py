@@ -1,8 +1,7 @@
 """
-example.py: Provides an example script to run BLUES and
-benchmark the run on a given platform
+blues.py: Provides an example script to run BLUES for performing a random torsional move
 
-Authors: Samuel C. Gill
+Authors: Samuel C. Gill, Sukanya Sasmal
 Contributors: Nathan M. Lim, David L. Mobley
 
 * Benchmarking related code adapted from:

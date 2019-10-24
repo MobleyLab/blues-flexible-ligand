@@ -1,3 +1,5 @@
+# this file is for post-processing coordinate trajectories (netcdf files) to obtain dihedral values
+
 parm ../complex_wat.prmtop
 trajin md.nc 
 dihedral j1 :369@C10 :369@C9 :369@C3 :369@C2 out torsion_lig1_MD.txt 
